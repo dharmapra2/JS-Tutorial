@@ -81,3 +81,22 @@ filter: blur(3px);
  z-index: 2;
  /* display: none; */
 }
+@media only screen and (min-width:768px) {
+    .open-model{
+        top: 45vh;
+        left: 34vw;
+    }
+    .left{
+        /* width: 82vw; */
+    }
+}
+@media only screen and (max-width:768px) {
+    .open-model{
+        top: 32vh;
+        left: 5vw;
+        width: 90%;
+    }
+    .left{
+        width: 82vw;
+    }
+}

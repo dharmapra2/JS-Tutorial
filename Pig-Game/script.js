@@ -18,9 +18,9 @@ const diceNew=document.querySelector('.newGame');
 let scores,currentScore,activePlayer,playing;
 
 //starting condition
-const inti =function(){
+const init =function(){
     scores=[0,0];
-    currentScore= 0;
+    currentScore= 1;
     activePlayer=0;
     playing=true;
 
@@ -35,7 +35,7 @@ const inti =function(){
     player1.classList.add('active');
     player2.classList.remove('active');
 };
-inti(); //function calling
+init(); //function calling
 
 const switchPlayer= function(){
     document.getElementById('current-${activePlayer}').textContent=0;
@@ -50,15 +50,16 @@ diceRoll.addEventListener('click',function(){
     if(playing){
         //generating random dice roll
         const dice=Math.trunc(Math.random()*6)+1;
-
+        console.log(dice)
         //display dice
         diceEl.classList.remove('hidden');
-        diceEl.src= 'dice-${dice}.png';
+        diceEl.src= 'dice-'+dice+'.png';
+        console.log(diceEl.src)
         
         //check for rolled 1
         if(dice!==1){
-            currentScore+=dice;
-            document.getElementById('current-${activePlayer}').textContent=currentScore;
+            currentScore+=dice-1;
+            document.getElementById('current-'+activePlayer).textContent=currentScore;
         }
         else{
             //switch to next player

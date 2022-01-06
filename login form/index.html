@@ -14,17 +14,30 @@
         <button class="left btn active">Login</button>
         <button class="right btn">Signup</button>
       </div>
-      <form action="">
-        <!-- <label for="email">Name</label> -->
+      <form action="" class="login ">
         <input type="email" placeholder="Email Address" id="" />
         <input type="password" placeholder="Password" id="" />
         <p class="text">Forget Password ?</p>
         <button type="submit" class="btn active">Login</button>
       </form>
-      <div class="end">
+      <div class="end login hidden">
         <p>Not a member? <a href="">Signup now</a></p>
       </div>
+      <section class="sign_up hidden">
+        <form action="">
+          <p>ipdfhsjkdfhvsxvhbdfghjghsdfgbfsngndfmnv</p>
+        </form>
+      </section>
     </main>
-    <!-- <script src="style.js"></script> -->
+    <script>
+      const login = document.querySelectorAll(".login");
+      const Signup = document.querySelector('.sign_up'); 
+      const login_btn = document.querySelector('.left'); 
+      const signup_btn = document.querySelector('.right'); 
+      signup_btn.addEventListener('click',function(){
+      login.classList.add("hidden");
+      Signup.classList.remove("hidden");
+      })
+    </script>
   </body>
 </html>

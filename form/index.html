@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>logion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="form-box">
+            <h1 class="heading">Login Form</h1>
+            <div class="btn-box">
+                <div class="active"></div>
+                <button type="button" class="toggle-btn" onclick="LogIn()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="signUp()">Sign Up</button>
+            </div>
+        <form class="login-group" id="login">
+            <input type="text" class="login-field" placeholder="Enter User Id" id="" required>
+            <input type="password" class="login-field"  placeholder="Enter Password" id="" />
+            <input type="checkbox" class="check-box"><span>Remember Password</span>
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+        <form id="signup" class="login-group">
+            <input type="text" class="login-field" placeholder="Enter name" id="" required>
+            <input type="tel" class="login-field" placeholder="Enter ph no" id="" required>
+            <input type="text" class="login-field" placeholder="Enter User id" id="" required>
+            <input type="password" class="login-field"  placeholder="Enter Password" id="" />
+            <input type="checkbox" class="check-box"><span>i agree to the terms & conditions</span>
+            <button type="submit" class="submit-btn">Create</button>
+            <button type="submit" class="submit-btn">Cancel</button>
+        </form>
+    </section>
+    </main>
+    <script>
+        var login_btn= document.getElementById("login");
+        var signup_btn= document.getElementById("signup");
+        var active_btn= document.getElementsByClassName("active");
+        function signUp(){
+            login_btn.Style.left="-400px";
+            signup_btn.Style.left="50px";
+            active_btn.Style.left="110px";
+        }
+        function LogIn(){
+            login_btn.Style.left="50px";
+            signup_btn.Style.left="450px";
+            active_btn.Style.left="px";
+        }
+    </script>
+</body>
+</html>

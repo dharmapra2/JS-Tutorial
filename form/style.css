@@ -13,19 +13,21 @@
     position: absolute;
     /* display: flex; */
 }
-.form-box{
+#form-box{
     width: 380px;
-    height: 480px;
+    height: 380px;
     position: relative;
     margin: 6% auto;
     background: #fff;
     padding: 5px;
     overflow: hidden;
+    transition: .5s;
 }
-.heading{
+#heading{
     margin: .5rem 0;
     text-align: center;
     text-transform: capitalize;
+    transition: 9s;
 }
 .btn-box{
     width: 250px;
@@ -69,6 +71,7 @@
     border-right: 0;
     border-bottom:  1px solid #999;
     outline: none;
+    text-transform: capitalize;
     background: transparent;
 }
 .submit-btn{
@@ -89,6 +92,10 @@ span{
     font-size: 12px;
     bottom: 68px;
     position: absolute;
+}
+.btn-box1{
+    display: flex;
+    justify-content: space-between;
 }
 #login{
     left: 50px;

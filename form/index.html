@@ -9,43 +9,50 @@
 </head>
 <body>
     <main class="container">
-        <section class="form-box">
-            <h1 class="heading">Login Form</h1>
+        <section id="form-box">
+            <h1 id="heading">Login Form</h1>
             <div class="btn-box">
                 <div class="active"></div>
                 <button type="button" class="toggle-btn" onclick="LogIn()">Log In</button>
-                <button type="button" class="toggle-btn" onclick="signUp()">Sign Up</button>
+                <button type="button" class="toggle-btn" onclick="signUp()">Create Account</button>
             </div>
-        <form class="login-group" id="login">
+        <form id="login" class="login-group">
             <input type="text" class="login-field" placeholder="Enter User Id" id="" required>
             <input type="password" class="login-field"  placeholder="Enter Password" id="" />
             <input type="checkbox" class="check-box"><span>Remember Password</span>
             <button type="submit" class="submit-btn">Login</button>
         </form>
-        <form id="signup" class="login-group">
+        <form action="" id="signup" class="login-group" autocomplete="on">
             <input type="text" class="login-field" placeholder="Enter name" id="" required>
-            <input type="tel" class="login-field" placeholder="Enter ph no" id="" required>
+            <input type="tel" class="login-field" placeholder="Enter phone number" id="" required>
             <input type="text" class="login-field" placeholder="Enter User id" id="" required>
             <input type="password" class="login-field"  placeholder="Enter Password" id="" />
             <input type="checkbox" class="check-box"><span>i agree to the terms & conditions</span>
-            <button type="submit" class="submit-btn">Create</button>
-            <button type="submit" class="submit-btn">Cancel</button>
+            <div class="btn-box1">
+                <button type="submit" class="submit-btn">Sign Up</button>
+            <button class="submit-btn" onclick="window.location.reload()">Cancel</button>
+            </div>
         </form>
     </section>
     </main>
-    <script>
-        var login_btn= document.getElementById("login");
-        var signup_btn= document.getElementById("signup");
-        var active_btn= document.getElementsByClassName("active");
+    <script type="text/javascript">
+        let login_btn = document.getElementById('login');
+        let signup_btn = document.getElementById('signup');
+        let active_btn= document.getElementsByClassName("active")[0];
+        const text = document.getElementById('heading');
         function signUp(){
-            login_btn.Style.left="-400px";
-            signup_btn.Style.left="50px";
-            active_btn.Style.left="110px";
+            text.innerHTML = "Create Account";
+            login_btn.style.left="-400px";
+            signup_btn.style.left="50px";
+            active_btn.style.left="110px";
+            document.getElementById('form-box').style.height="480px";
         }
         function LogIn(){
-            login_btn.Style.left="50px";
-            signup_btn.Style.left="450px";
-            active_btn.Style.left="px";
+            text.innerHTML = "Login Form";
+            login_btn.style.left="50px";
+            signup_btn.style.left="450px";
+            active_btn.style.left="0px";
+            document.getElementById('form-box').style.height="380px";
         }
     </script>
 </body>

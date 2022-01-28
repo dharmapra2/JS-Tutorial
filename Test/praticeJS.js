@@ -293,8 +293,8 @@ console.log(restaurant);*/
 // console.log([...que.values()]);
 
 //=======================String============================
-const airPlane = "Tap Airbus Portugal";
-const plane = "A3203";
+// const airPlane = "Tap Airbus Portugal";
+// const plane = "A3203";
 // console.log(plane[4]);
 // console.log("Dahrma".indexOf("a"));
 // console.log("Dahrma".lastIndexOf("a"));

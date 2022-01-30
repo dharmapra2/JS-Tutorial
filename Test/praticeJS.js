@@ -323,3 +323,4 @@ console.log(restaurant);*/
 // console.log(card(23));
 // console.log(card(3483234892));
 // console.log(card(394376));
+// console.log('avb '.repeat(3));

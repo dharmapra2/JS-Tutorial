@@ -134,7 +134,7 @@
 // };
 // const addAt2=addTaxRate(0.23);
 // console.log(addAt2(100));
-
+/**
  const poll={
      question:'What is your fav. programming language ?',
      options:['0: javaScript','1:Pyhon','2:Ruby','3:C++'],
@@ -156,9 +156,10 @@
             console.log(`polls are ${this.answer.join(', ')}`);
         }
      }
-}
+}*/
 // poll.registerNewAnswaer();
-document.querySelector('.poll').addEventListener('click',poll.registerNewAnswaer.bind(poll));
+// document.querySelector('.poll').addEventListener('click',poll.registerNewAnswaer.bind(poll));
 
-poll.displayResults.call({answer: [4,2,6]},'string');
-poll.displayResults.call({answer: [4,2,6,65,3,5,3]});
+// poll.displayResults.call({answer: [4,2,6]},'string');
+// poll.displayResults.call({answer: [4,2,6,65,3,5,3]});
+

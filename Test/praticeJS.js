@@ -324,3 +324,76 @@ console.log(restaurant);*/
 // console.log(card(3483234892));
 // console.log(card(394376));
 // console.log('avb '.repeat(3));
+
+//===========section 12============================
+//=============mathematical operations=============================
+// console.log(2===2.0);
+// console.log(0.1+0.2);
+// console.log((0.1+0.2)===0.3);
+//check value is a numer
+// console.log(Number(43));
+// console.log(+2);
+// console.log(parseInt('30px'));
+// console.log(parseInt('e23'));
+// console.log(parseInt('2.4rem'));
+// console.log(parseFloat('2.4rem'));
+
+//check value is not a numer
+// console.log(Number.isNaN(20));
+// console.log(Number.isNaN("20"));
+// console.log(Number.isNaN(+'20px'));
+// console.log(Number.isNaN(20/0));
+
+//check number 
+// console.log(isFinite(20));
+// console.log(Number.isFinite(20));
+// console.log(Number.isFinite('20'));
+
+// console.log(Number.isInteger(20));
+// console.log(Number.isInteger(20.0));
+// console.log(Number.isInteger(20.7));
+// console.log(Number.isInteger(20/0));
+
+//math operations=============-----------------------------
+// console.log(Math.sqrt(25));
+// console.log(25 ** (1/2));
+// console.log(8 ** (1/3));
+
+// console.log(Math.PI);
+// console.log(Math.max(2.4,6,3,6,3,9.8));
+// console.log(Math.max(2.4,6,3,6,3,'9.8'));
+// console.log(Math.max(2.4,6,3,6,3,'9.8e'));
+
+// console.log(Math.trunc(Math.random()*6)+1);
+// const rand=(max,min)=>Math.trunc(Math.random()*(max-min)+1)+min;
+// console.log(rand(12,16));
+
+//celi,floor,trunc functions
+// console.log(Math.ceil(-23.1));
+// console.log(Math.ceil(-23.9));
+// console.log(Math.floor(-23.99));
+// console.log(Math.round(-23.9));
+// console.log(Math.round(23.9));
+// console.log(Math.trunc(23.9));
+
+// console.log((2.734).toFixed(0));
+// console.log((2.73598).toFixed(2));
+// console.log(+(2.762).toFixed(3));
+
+//numeric separator
+// let z=204_42_4343.35_4;
+// console.log(z);
+
+//=======================BigInt()================================
+// console.log(2**53-1);
+// console.log(Number.MAX_VALUE);
+// console.log(Number.MAX_SAFE_INTEGER);
+// console.log(2**53+1);
+// console.log(2**53+2);
+// console.log(2**53+3);
+// console.log(7785725787973458728957234570982375_23542987525n+1n);
+// console.log(BigInt(2344));
+// console.log(12n+10n);
+// const huge=10n;
+// let num=89;
+// console.log(huge*BigInt(num));

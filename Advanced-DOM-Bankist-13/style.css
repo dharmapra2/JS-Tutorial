@@ -1,5 +1,3 @@
-/* The page is NOT responsive. You can implement responsiveness yourself if you wanna have some fun 😃 */
-
 :root {
   --color-primary: #5ec576;
   --color-secondary: #ffcb03;
@@ -23,6 +21,8 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  /* scroll-behavior: smooth;
+  scrollbar-color: var(--color-secondary); */
 }
 
 body {
@@ -671,4 +671,5 @@ h4 {
   color: #bbb;
   font-size: 1.5rem;
   font-weight: 400;
+  transition: 3s ease-out;
 }

@@ -30,7 +30,7 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
-
+/////////////////////////////////////////////
 //=====================scrolling==================================
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 //console.log(btnScrollTo);
@@ -56,17 +56,30 @@ btnScrollTo.addEventListener('click', function (e) {
     //method--3
   section1.scrollIntoView({ behavior: 'smooth' });
 });
+//////////////////////////////////////////////
+//===================Page Navigation==================
+//method--1
+/**
+document.querySelectorAll('.nav__link').forEach(function (e) {
+  e.addEventListener('click', function (ele) {
+    ele.preventDefault();
+    const id = ele.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth', });
+  });
+});*/
 
-//===================navbar scrolling==================
-
-
-
-
-
-
-
-
-//==================testing===================================
+//method--2
+//it is best efficent method to scroll by using Event Delegation
+document.querySelector('.nav__links').addEventListener('click', function (ele) {
+  ele.preventDefault();
+  if (ele.target.classList.contains('nav__link')) {
+  // if (ele.target.className==='nav__link') {
+    const id = ele.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+});
+/////////////////////////////////////////////////////////////
+//==================testing & pratice===================================
 //----------selecting element--------
 // console.log(document.documentElement);
 // console.log(document.body);
@@ -126,3 +139,32 @@ const logo = document.querySelector('.nav__logo');
 // logo.classList.toggle('c');
 // console.log(logo.classList.contains('b'));
 // console.log(logo.className);
+
+
+//=============types of event and handlers===================
+const h1 = document.querySelector('h1');
+// h1.addEventListener('mouseenter',function(e){
+//   alert('your reading heading');
+// });
+
+// h1.onmouseenter = e => alert('fikf');
+
+// const alerth1 = (e) => {
+//   alert('don\' copy ');
+//   //remove eventlistiner
+//   h1.removeEventListener('copy', alerth1);
+// }
+// h1.addEventListener('copy', alerth1);
+
+//======================DOM traversing====================
+// going downwards: child
+console.log(h1.querySelectorAll('.highlight'));
+console.log(h1.childNodes);
+console.log(h1.children);
+h1.firstElementChild.style.color = 'red';
+h1.lastElementChild.style.color = 'blue';
+
+//going upwards : parent
+console.log(h1.parentElement);
+console.log(h1.parentNode);
+h1.closest('h1').style.backgroundColor = 'var(--gradient-secondary)';

@@ -21,7 +21,7 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
-  transition: all 3s ease-in-out;
+  transition:  3s ease-in;
   /* scroll-behavior: smooth; */
 }
 html::-webkit-scrollbar{

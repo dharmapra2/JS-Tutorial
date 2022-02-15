@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dice Roll</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <main class="container">
-        <div class="left section active">
-            <h1 class="heading" id="name-1">Player 1</h1>
-            <div class="show-score" id="score-1">43</div>
-            <div class="button">
-                <p class="text">current</p>
-                <span class="cu-score" id="current-1">0</span>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="This is my js pratice session">
+    <meta name="keywords" content="HTML, CSS,JavaScript">
+    <meta name="author" content="Dharma Pradhan">
+    <link rel="stylesheet" href="style.css" />
+    <title>Pig Game</title>
+    <link rel="shortcut icon" href="./dice-5.png" type="image/x-icon">
+  </head>
+  <body>
+    <main>
+      <section class="player player--0 player--active">
+        <h2 class="name" id="name--0">Player 1</h2>
+        <p class="score" id="score--0">43</p>
+        <div class="current">
+          <p class="current-label">Current</p>
+          <p class="current-score" id="current--0">0</p>
         </div>
-        <div class="mid">
-            <div class="btn newGame">New Game</div>
-            <img src="dice-4.png" alt="dicePic" class="dicePic">
-            <div class="btn rollDice">Roll Dice</div>
-            <div class="btn hold">🕹Hold</div>
+      </section>
+      <section class="player player--1">
+        <h2 class="name" id="name--1">Player 2</h2>
+        <p class="score" id="score--1">24</p>
+        <div class="current">
+          <p class="current-label">Current</p>
+          <p class="current-score" id="current--1">0</p>
         </div>
-        <div class="right section">
-            <h1 class="heading" id="name-2">Player 2</h1>
-            <div class="show-score" id="score-2">43</div>
-            <div class="button">
-                <p class="text">current</p>
-                <span class="cu-score" id="current-2">0</span>
-            </div>
-        </div>
+      </section>
+
+      <img src="dice-5.png" alt="Playing dice" class="dice" />
+      <button class="btn btn--new">🔄 New game</button>
+      <button class="btn btn--roll">🎲 Roll dice</button>
+      <button class="btn btn--hold">📥 Hold</button>
     </main>
-<script src="script.js"></script>
-</body>
+    <script defer src="script.js"></script>
+  </body>
 </html>

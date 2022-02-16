@@ -13,15 +13,15 @@ const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 const player1Name = document.getElementById("name--0");
 const player2Name = document.getElementById("name--1");
-let scores, currentScore, activePlayer, playing;
+let scores, currentScore, activePlayer, playing,name1,name2;
 
 // Starting conditions
 const init = function () {
-  // alert("Press roll button to progress.\nHold button to save current score.\nUser will win when thier score reach to 100 or more ");
-  // const name1 = prompt("Enter Player1 Name:", "Player1");
-  // const name2 = prompt("Enter Player2 Name:", "Player2");
-  // player1Name.textContent = name1;
-  // player2Name.textContent = name2;
+  alert("Press roll button to progress.\nHold button to save current score.\nUser will win when thier score reach to 100 or more ");
+  name1 = prompt("Enter Player1 Name:", "Player1");
+  name2 = prompt("Enter Player2 Name:", "Player2");
+  player1Name.textContent = name1;
+  player2Name.textContent = name2;
   scores = [0, 0];
   currentScore = 0;
   activePlayer = 0;
@@ -37,6 +37,7 @@ const init = function () {
   player1El.classList.remove('player--winner');
   player0El.classList.add('player--active');
   player1El.classList.remove('player--active');
+
 };
 init();
 
@@ -92,6 +93,7 @@ btnHold.addEventListener('click', function () {
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.remove('player--active');
+      alert(`Congratulations ${(activePlayer+1)==1?name1:name2} win the game.`);
     } else {
       // Switch to the next player
       switchPlayer();

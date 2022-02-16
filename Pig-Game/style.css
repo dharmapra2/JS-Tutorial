@@ -169,7 +169,7 @@ main {
 .hidden {
   display: none;
 }
-@media screen and (max-width:380px) {
+@media screen and (max-width:720px) and (max-height:1280px) {
     main{
         width: 97vw;
         height: 60vh;
@@ -184,6 +184,10 @@ main {
     .score{
         font-size: 3rem;
     }
+    .dice{
+      top: 18vh;
+      height: 5rem;
+    }
     .current-score{
         font-size: 2rem;
     }
@@ -193,13 +197,13 @@ main {
         /* margin-top: -3vh; */
     }
     .btn--new {
-        top: 15vh;
+        top: 10vh;
       }
       .btn--roll {
-        top: 25vh;
+        top: 30vh;
       }
       .btn--hold {
-        top: 35vh;
+        top: 40vh;
       }
     .current-label{
         font-size: 1.3rem;

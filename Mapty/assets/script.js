@@ -95,29 +95,48 @@ class App{
      }
     _newWorkOut() {
         e.preventDefault();
+        // Get data from From
+        const type = inputType.value;
+        const distance = +inputDistance.value;
+        const duration = +inputDuration.value;
         
-            //clear input fields
-            inputCadence.value = inputDistance.value = inputDuration.value = inputElevation.value = '';
-            // display marker
-            //console.log(mapEvent);
-            const { lat, lng } = this.#mapEvent.latlng;
-            L.marker({ lat, lng }).addTo(this.#map)
-                .bindPopup(
-                    L.popup({
-                        maxWidth: 250,
-                        minWidth: 100,
-                        autoClose: false,
-                        closeOnClick: false,
-                        className: "running-popup"
-                    })
-                )
-                .setPopupContent('workout')
-                .openPopup();
+        // If workout running, create running object
+        if (type === 'running') {
+            const cadence = +inputCadence.value;
+            // Check if data is valid
+            if (Number.isFinite(distance)) return alert(`input has to be Number.`);
+        }
+        // If workout cycling, create running object
+        if (type === 'cycling') {
+            const elevation = +inputElevation.value;
+        }
+        // Add new object to workout array
+
+        // Render workout on app as marker
+        const { lat, lng } = this.#mapEvent.latlng;
+        L.marker({ lat, lng }).addTo(this.#map)
+            .bindPopup(
+            L.popup({
+                maxWidth: 250,
+                minWidth: 100,
+                autoClose: false,
+                closeOnClick: false,
+                className: "running-popup"
+            })
+            )
+            .setPopupContent('workout')
+            .openPopup();
+        // Render workout on map
+
+        // Hide from & clear input fields
+
+        //clear input fields
+        inputCadence.value = inputDistance.value = inputDuration.value = inputElevation.value = '';
+        // display marker
+        //console.log(mapEvent);
+        
     }
 }
 
 const workoutApp = new App();
 // workoutApp._getPosition();
-
-
-

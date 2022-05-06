@@ -35,4 +35,4 @@ function generate() {
 }
 setInterval(() => {
   generate();
-}, 6500);
+}, 7550);

@@ -4,12 +4,12 @@ const btn = document.querySelector(".btn-country");
 const countriesContainer = document.querySelector(".countries");
 
 //----------------- Render Country ---------------
-function renderCountry(data) {
+function renderCountry(data,className='') {
   let lang = Object.values(data.languages).join(",");
   let currencies = Object.values(data.currencies)[ 0 ][ "name" ];
   let countryName = data.name?.[ "common" ];
   const html = `
-    <article class="country">
+    <article class="country ${className}">
     <img class="country__img" src="${data.flags[ "png" ]}" />
       <div class="country__data">
         <h3 class="country__name">${countryName}</h3>
@@ -35,12 +35,10 @@ const getCountry = (cname) => {
     // console.log(this.responseText);
     // destroring object to array
     const [ data ] = JSON.parse(this.responseText);
-    console.log(data);
     //REnder country
     renderCountry(data);
     //Neighbour Countries
     const neighbourCountry = data.borders;
-    console.log(neighbourCountry);
     neighbourCountry.forEach((country) => {
       const requestNeighbourCountry = new XMLHttpRequest();
       requestNeighbourCountry.open(
@@ -51,10 +49,10 @@ const getCountry = (cname) => {
       requestNeighbourCountry.addEventListener("load", function () {
         const [ data ] = JSON.parse(this.responseText);
         //REnder country
-        renderCountry(data);
+        renderCountry(data ,'neighbour');
         // console.log(data);
       });
     });
   });
 };
-getCountry("portugal");
+getCountry("canada");

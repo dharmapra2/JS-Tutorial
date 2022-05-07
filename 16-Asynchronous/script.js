@@ -100,16 +100,17 @@ const renderError = (err) => {
     });
 };*/
 
+//fetch data and return
 const getJson = async (url, errorMsg = "Something went wrong") => {
   return await fetch(url).then((response) => {
     if (!response.ok) {
-      throw new Error(`(${response.status}), Try Agian !..`);
+      throw new Error(`${errorMsg} (${response.status}), Try Agian !..`);
     }
     return response.json();
   });
 };
 const getCountry = async (cname) => {
-  getJson(
+ await getJson(
     `https://restcountries.com/v3.1/name/${cname}`,
     `Country not found fro name : ${cname}`
   )
@@ -118,7 +119,9 @@ const getCountry = async (cname) => {
       renderCountry(country);
       // render neighbour countries
       const neighbourCountries = country.borders;
-      if (!neighbourCountries) return;
+      console.log(neighbourCountries);
+      if (!neighbourCountries)
+        throw new Error(`No neighbour country found !..`);
       neighbourCountries.forEach((country) => {
         getJson(
           `https://restcountries.com/v3.1/alpha/${country}`,
@@ -129,7 +132,7 @@ const getCountry = async (cname) => {
         });
       });
     })
-    .catch((err) => renderError(`Something went wrong : ${err}`))
+    .catch((err) => renderError(err.message))
     .finally(() => {
       countriesContainer.style.opacity = 1;
     });

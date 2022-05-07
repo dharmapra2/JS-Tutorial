@@ -27,7 +27,10 @@ body {
 .countries {
   /* margin-bottom: 8rem; */
   display: flex;
-
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   font-size: 2rem;
   opacity: 0;
   transition: opacity 1s;
@@ -39,7 +42,7 @@ body {
   font-size: 1.8rem;
   width: 30rem;
   border-radius: 0.7rem;
-  margin: 0 3rem;
+  margin: 1rem 1rem;
   /* overflow: hidden; */
 }
 

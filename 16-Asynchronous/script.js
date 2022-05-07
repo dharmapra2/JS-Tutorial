@@ -4,19 +4,19 @@ const btn = document.querySelector(".btn-country");
 const countriesContainer = document.querySelector(".countries");
 
 //----------------- Render Country ---------------
-function renderCountry(data,className='') {
+function renderCountry(data, className = "") {
   let lang = Object.values(data.languages).join(",");
-  let currencies = Object.values(data.currencies)[ 0 ][ "name" ];
-  let countryName = data.name?.[ "common" ];
+  let currencies = Object.values(data.currencies)[0]["name"];
+  let countryName = data.name?.["common"];
   const html = `
     <article class="country ${className}">
-    <img class="country__img" src="${data.flags[ "png" ]}" />
+    <img class="country__img" src="${data.flags["png"]}" />
       <div class="country__data">
         <h3 class="country__name">${countryName}</h3>
         <h4 class="country__region">${data.region}</h4>
         <p class="country__row"><span>👫</span>${(
-      +data.population / 10000000
-    ).toFixed(1)}M people</p>
+          +data.population / 10000000
+        ).toFixed(1)}M people</p>
         <p class="country__row"><span>🗣️</span>${lang}</p>
         <p class="country__row"><span>💰</span>${currencies}</p>
       </div>
@@ -26,7 +26,7 @@ function renderCountry(data,className='') {
   countriesContainer.style.opacity = 1;
 }
 ///////////////////////////////////////
-const getCountry = (cname) => {
+/*const getCountry = (cname) => {
   const request = new XMLHttpRequest();
   request.open("GET", `https://restcountries.com/v3.1/name/${cname}`);
   request.send();
@@ -54,5 +54,26 @@ const getCountry = (cname) => {
       });
     });
   });
+};*/
+// getCountry("sri");
+
+/* -----------------------mordern way to call asynchronous ------------ */
+const getCountry = (cname) => {
+  fetch(`https://restcountries.com/v3.1/name/${cname}`)
+    .then((res) => res.json())
+    .then((data) => {
+      let country = data[0];
+      renderCountry(country);
+      // render neighbour countries
+      const neighbourCountries = country.borders;
+      neighbourCountries.forEach((country) => {
+        fetch(`https://restcountries.com/v3.1/alpha/${country}`)
+          .then((res2) => res2.json())
+          .then((data2) => {
+            let country2 = data2[0];
+            renderCountry(country2, "neighbour");
+          });
+      });
+    });
 };
-getCountry("canada");
+getCountry("india");

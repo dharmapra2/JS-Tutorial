@@ -112,7 +112,7 @@ const getJson = async (url, errorMsg = "Something went wrong") => {
 const getCountry = async (cname) => {
  await getJson(
     `https://restcountries.com/v3.1/name/${cname}`,
-    `Country not found fro name : ${cname}`
+    `Country not found for name : ${cname}`
   )
     .then((data) => {
       let country = data[0];

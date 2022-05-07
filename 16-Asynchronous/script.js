@@ -6,15 +6,17 @@ const countriesContainer = document.querySelector(".countries");
 //----------------- Render Country ---------------
 function renderCountry(data) {
   let lang = Object.values(data.languages).join(",");
-  let currencies = Object.values(data.currencies)[0]["name"];
+  let currencies = Object.values(data.currencies)[ 0 ][ "name" ];
+  let countryName = data.name?.[ "common" ];
   const html = `
     <article class="country">
-    <img class="country__img" src="${data.flags["png"]}" />
+    <img class="country__img" src="${data.flags[ "png" ]}" />
       <div class="country__data">
+        <h3 class="country__name">${countryName}</h3>
         <h4 class="country__region">${data.region}</h4>
         <p class="country__row"><span>👫</span>${(
-          +data.population / 10000000
-        ).toFixed(1)}M people</p>
+      +data.population / 10000000
+    ).toFixed(1)}M people</p>
         <p class="country__row"><span>🗣️</span>${lang}</p>
         <p class="country__row"><span>💰</span>${currencies}</p>
       </div>
@@ -32,7 +34,7 @@ const getCountry = (cname) => {
   request.addEventListener("load", function () {
     // console.log(this.responseText);
     // destroring object to array
-    const [data] = JSON.parse(this.responseText);
+    const [ data ] = JSON.parse(this.responseText);
     console.log(data);
     //REnder country
     renderCountry(data);
@@ -47,13 +49,12 @@ const getCountry = (cname) => {
       );
       requestNeighbourCountry.send();
       requestNeighbourCountry.addEventListener("load", function () {
-        const [data] = JSON.parse(this.responseText);
-        console.log(this);
+        const [ data ] = JSON.parse(this.responseText);
         //REnder country
         renderCountry(data);
-        console.log(country);
+        // console.log(data);
       });
     });
   });
 };
-getCountry("india");
+getCountry("portugal");

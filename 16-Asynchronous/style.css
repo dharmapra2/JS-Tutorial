@@ -23,7 +23,10 @@ body {
   flex-flow: column;
   align-items: center;
 }
-
+#map {
+  height: 55vh;
+  width: 75vw;
+}
 .countries {
   /* margin-bottom: 8rem; */
   display: flex;

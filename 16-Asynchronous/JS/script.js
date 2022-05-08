@@ -142,7 +142,10 @@ btn.addEventListener("click", () => {
   // getCountry("india");
 });
 
-const viewMap = (coords,address) => {
+const viewMap = (coords, address) => {
+  //to remove exiting map data
+  map.remove();
+  //set new map
   map = L.map("map").setView(coords, 13);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
@@ -166,12 +169,13 @@ const whereAmI = async (input) => {
     .then((data) => {
       let address = data.standard;
       console.log(address);
-      const coords = [ data.latt, data.longt ];
-      viewMap(coords,address);
+      const coords = [data.latt, data.longt];
+      viewMap(coords, address);
     })
     .catch((err) => console.log(err.message));
 };
 
+//to view current location onm map
 const getPosition = () => {
   return new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(resolve, reject);
@@ -180,12 +184,13 @@ const getPosition = () => {
 getPosition().then((pos) => {
   console.log(pos.coords);
   const { latitude, longitude } = pos.coords;
-  map = L.map("map").setView([ latitude, longitude], 13);
+
+  map = L.map("map").setView([latitude, longitude], 10);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
-  L.marker([ latitude, longitude])
+  L.marker([latitude, longitude])
     .addTo(map)
     .bindPopup(`<h2>home</h2>`)
     .openPopup();
@@ -193,6 +198,7 @@ getPosition().then((pos) => {
 
 function getData() {
   console.log(text.value);
+  
   whereAmI(text.value);
   text.value = "";
 }

@@ -19,5 +19,16 @@ const getPosition = () => {
     navigator.geolocation.getCurrentPosition(resolve, reject);
   });
 };
-getPosition().then((pos) => console.log(pos));
-
+getPosition().then((pos) => {
+  console.log(pos.coords);
+  const { latitude, longitude } = pos.coords;
+  map = L.map("map").setView([ latitude, longitude], 13);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+  L.marker([ latitude, longitude])
+    .addTo(map)
+    .bindPopup(`<h2>home</h2>`)
+    .openPopup();
+});

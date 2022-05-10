@@ -138,9 +138,9 @@ const getCountry = async (cname) => {
       countriesContainer.style.opacity = 1;
     });
 };
-btn.addEventListener("click", () => {
-  // getCountry("india");
-});
+// btn.addEventListener("click", () => {
+//  getCountry("india");
+// });
 
 const viewMap = (coords, address) => {
   //to remove exiting map data
@@ -198,7 +198,6 @@ getPosition().then((pos) => {
 
 function getData() {
   console.log(text.value);
-  
   whereAmI(text.value);
   text.value = "";
 }

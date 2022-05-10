@@ -23,6 +23,18 @@ body {
   flex-flow: column;
   align-items: center;
 }
+.input{
+  height: 2rem;
+  width: 70vw;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8rem;
+  flex-wrap: wrap;
+}
+.input >input{
+  padding: 1rem;
+  margin: 1rem;
+}
 #map {
   height: 55vh;
   width: 75vw;

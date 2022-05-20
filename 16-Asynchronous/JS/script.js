@@ -199,7 +199,9 @@ getPosition().then((pos) => {
 function getData() {
   console.log(text.value);
   whereAmI(text.value);
-  // text.value = "";
+  setTimeout(()=>{
+    text.value = "";
+  }, 2000);
 }
 
 // map js

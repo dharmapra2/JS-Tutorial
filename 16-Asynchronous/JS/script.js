@@ -176,7 +176,7 @@ const whereAmI = async (input) => {
 };
 
 //to view current location onm map
-const getPosition = () => {
+const getPosition =async () => {
   return new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(resolve, reject);
   });
@@ -199,7 +199,7 @@ getPosition().then((pos) => {
 function getData() {
   console.log(text.value);
   whereAmI(text.value);
-  text.value = "";
+  // text.value = "";
 }
 
 // map js

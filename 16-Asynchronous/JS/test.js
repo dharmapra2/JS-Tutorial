@@ -14,7 +14,7 @@ let text = document.querySelector("#text");
 // });
 // result.then((res) => console.log(res)).catch((err) => console.log(err));
 
-const getPosition = () => {
+const getPosition = async () => {
   return new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(resolve, reject);
   });

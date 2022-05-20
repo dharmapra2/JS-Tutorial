@@ -36,8 +36,9 @@ body {
   margin: 1rem;
 }
 #map {
+  margin: 2rem;
   height: 55vh;
-  width: 75vw;
+  width: 85vw;
 }
 .countries {
   /* margin-bottom: 8rem; */
@@ -116,7 +117,7 @@ body {
 .btn-country {
   border: none;
   font-size: 2rem;
-  padding: 2rem 5rem;
+  padding: 1rem 3rem;
   border-radius: 0.7rem;
   color: white;
   background-color: orangered;

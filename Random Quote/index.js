@@ -25,9 +25,9 @@ result.addEventListener("load", () => {
   [...data] = JSON.parse(result.responseText);
 });
 function generate() {
-    let rno = Math.trunc(Math.random() * 11) + 1;
-    color1.style.backgroundColor = `${colors[ rno ]}`;
-    rno = Math.trunc(Math.random() * 11) + 1;
+  let rno = Math.trunc(Math.random() * 11) + 1;
+  color1.style.backgroundColor = `${colors[rno]}`;
+  rno = Math.trunc(Math.random() * 11) + 1;
   color2.style.backgroundColor = `${colors[rno]}`;
   let randomno = Math.trunc(Math.random() * 1643) + 1;
   text.textContent = data[randomno].text;

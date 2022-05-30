@@ -1,5 +1,5 @@
 "use strict";
-const dateSpan=document.querySelector('.date');
+const dateSpan = document.querySelector(".date");
 // console.log(dateSpan);
 // const now=new Date();
 // dateSpan.textContent=now.toISOString();
@@ -78,30 +78,30 @@ console.log(format(navigator.language));*/
 // clearInterval(timer);
 
 setInterval(() => {
-    let now = new Date();
-    dateSpan.textContent = now;
+  let now = new Date();
+  dateSpan.textContent = now;
 });
-console.log('wait 1s');
+console.log("wait 1s");
 
 //======================count down the timer===========================
-const count = document.querySelector('.count');
+const count = document.querySelector(".count");
 let time = 60;
 const countDown = () => {
-    count.style.background = 'yellow';
-    const tick = function () {
-        const min = String(Math.trunc(time / 60)).padStart(2, 0);
-        const sec = String(time % 60).padStart(2, 0);
-        //in each call to print the remaing time to GUI
-        count.textContent = `${min} : ${sec}`;
-        if (time === 0) {
-            count.textContent = `click to start countdown`;
-            count.style.background = '';
-            clearInterval(timer);
-            time = 60+1
-        }
-        time--;
-    };
-    tick();
-    const timer = setInterval(tick, 1000);
+  count.style.background = "yellow";
+  const tick = function () {
+    const min = String(Math.trunc(time / 60)).padStart(2, 0);
+    const sec = String(time % 60).padStart(2, 0);
+    //in each call to print the remaing time to GUI
+    count.textContent = `${min} : ${sec}`;
+    if (time === 0) {
+      count.textContent = `click to start countdown`;
+      count.style.background = "";
+      clearInterval(timer);
+      time = 60 + 1;
+    }
+    time--;
+  };
+  tick();
+  const timer = setInterval(tick, 1000);
 };
-count.addEventListener('click', countDown);
+count.addEventListener("click", countDown);

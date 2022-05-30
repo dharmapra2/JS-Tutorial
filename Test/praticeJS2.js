@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 //default parameters------------------------------------------
 // const bookings=[];
 // const createBooking=(flightnum,noOfPassanger=1,price=199*noOfPassanger)=>{
@@ -162,4 +162,3 @@
 
 // poll.displayResults.call({answer: [4,2,6]},'string');
 // poll.displayResults.call({answer: [4,2,6,65,3,5,3]});
-

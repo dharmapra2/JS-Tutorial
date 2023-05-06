@@ -76,3 +76,12 @@ console.log(addAndSquare(2, 3)); // output: 25
  * The resulting function takes two arguments a and b, adds them together using the add function, and
  * then squares the result using the square function.
  */
+
+var compose2 = function (functions) {
+  return function (x) {
+    return functions.reduceRight((acc, fn) => fn(acc), x);
+  };
+};
+
+const fn = compose2([(x) => x + 1, (x) => 2 * x]);
+console.log("compose2", fn(4)); // 9

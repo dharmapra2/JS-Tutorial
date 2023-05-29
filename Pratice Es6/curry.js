@@ -9,12 +9,13 @@
  *
  */
 let curry = function (fn) {
+  var res = [];
   return function curried(...args) {
-    console.log(args);
-    if (args.length >= fn.length) {
-      return fn.apply(this, args);
+    res.push(...args);
+    if (res.length < fn.length) {
+      return curried;
     }
-    return (...newArgs) => curried.apply(this, args.concat(newArgs));
+    return fn(...res);
   };
 };
 
